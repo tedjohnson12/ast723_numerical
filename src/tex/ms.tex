@@ -134,7 +134,7 @@ Now that $\eta$ can be found for any (attached shock) setup in both the strong a
 
 \begin{figure}[t]
     \includegraphics[width=0.5\textwidth]{figures/phi.pdf}
-    \caption{Shock angle solutions. The transition between strong (lower portion) and weak (upper portion) occurs and the $\psi$-maximum of each curve. This transition is marked by the dotted line.}
+    \caption{Shock angle solutions. The transition between strong (upper portion) and weak (lower portion) occurs and the $\psi$-maximum of each curve. This transition is marked by the dotted line.}
     \script{phi.py}
     \label{fig:phi}
 \end{figure}
@@ -142,6 +142,22 @@ Now that $\eta$ can be found for any (attached shock) setup in both the strong a
 Strong and weak shock solutions for $\phi$ are shown in Figure \ref{fig:phi}.
 
 \section{Discussion}
+\subsection{Conditions for an attached shock}
+\begin{figure}
+    \includegraphics[width=0.5\textwidth]{figures/psi_max.pdf}
+    \caption{Maximum deflection angle as a function of Mach number for an attached shock. Barriers with opening angles greater than $\psi_\text{max}$ will create a bow shock. The dashed line shows the limiting value as $M_1 \rightarrow \infty$. This figure assumes $\gamma = 5/3$.}
+    \script{psi_max.py}
+    \label{fig:psi-max}
+\end{figure}
+
+It can be seen visually in Figure \ref{fig:phi} there exists a maximum angle $\psi_\text{max}$ for which we can calculate the angle of an attached shock. A barrier more blunt than $\psi_\text{max}$ will create a bow shock. Figure \ref{fig:psi-max} calculates this angle as a function of $M_1$. Qualitatively, this figure shows that a more blunt object requires a faster flow velocity (higher $M_1$) to maintain an attached shock than a more pointed object. While, formally, no attached shock can be created in sonic flow ($M_1=1$), in the limit that $\psi\rightarrow 0$ an attached shock can exist at very low Mach numbers ($M_1 \gtrapprox 1$).
+
+On the other hand, there is an opening angle $\psi_{\text{max},M_1\rightarrow \infty} = \arcsin{(1/\gamma)}$ for which a bow shock will form no matter how fast the flow velocity is.
+
+\subsection{Choice between strong and weak shocks}
+As discussed in the previous sections, when $\psi<\psi_\text{max}$ the function $\phi(\psi)$ is double valued. While both solutions are mathematically valid, we can look to the limiting behavior of each branch to determine which is more likely to be observed in nature.
+
+While looking at Figure \ref{fig:phi}, consider a barrier of infinitesimal opening angle and a flow of $M_1\sim\infty$. The two valid solutions are $\phi\sim 0$ and $\phi\sim\pi/2$. In the case of a finite wedge, the choice $\phi\sim\pi/2$ is clearly not valid as it would create a shock front along the $y$-axis, and the whole of quadrants I \& IV would be in the post-shock flow. Only the choice of the weak $\phi\sim 0$ solution allows for a finite post-shock area. If we then increase $\psi$ and continue on the weak solution branch, then the only location where a transition would be allowed is at $\psi=\psi_\text{max}$. It may be possible to cause the strong branch to take over at that point via artificial means, but there is no mathematical reason that the strong solution branch should be preferred. \citet{shu} notes that the strong shock solutions are irrelevant in the case of the idealized problem we have presented here. 
 
 
 \bibliography{bib}
