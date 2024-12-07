@@ -18,7 +18,6 @@ plt.style.use('bmh')
 if __name__ == "__main__":
     fig = plt.figure(figsize=(7,4))
     ax = fig.add_subplot(1,1,1)
-    # ax.set_aspect('equal')
     colors = plt.cm.viridis(np.linspace(0, 1, len(M1)))
     for m1,c,n in zip(M1, colors,NAMES):
         psi_max, eta_max = helpers.get_psi_max(m1**2, GAMMA)
@@ -35,7 +34,6 @@ if __name__ == "__main__":
     ax.set_xlabel('$\\psi$',fontsize=14)
     ax.set_ylabel('$\\phi$',fontsize=14)
     _=ax.legend(prop={'size': 14},loc=(.15,1.1),ncol=2)
-    # ax.set_xlim(-0.05*np.pi, 1.05*np.pi/2)
     ax.text(0.55,0.15,'$\\gamma = 5/3$', fontsize=14,rotation=0,va='center',ha='center')
     
     m1 = 1/np.linspace(1e-5,1-1e-5,1000)

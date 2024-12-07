@@ -61,8 +61,6 @@ def get_psi_max(
         res = (np.arctan(ybest/xbest), np.sqrt(xbest**2 + ybest**2))
     except RuntimeError:
         res = (np.nan, np.nan)
-    # if (res < 0) or res > 1:
-    #     res = np.nan
     return res
 
 
@@ -131,5 +129,3 @@ if __name__ == "__main__":
     psi = 0.64
     print(psi_max(gamma))
     print(get_psi_max(m1_sq, gamma))
-    # print(eta_weak(psi, m1_sq, gamma))
-    # print(eta_strong(psi, m1_sq, gamma))
